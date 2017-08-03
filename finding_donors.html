@@ -14158,8 +14158,18 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>*<em>Answer: </em>Adaboost : It is  a boosting technique which combines multiple weak classifier into a  strong classifier.
- This is an iterative algorithm where each point in dataset assigned some weight.In each iteration,  using weak classifier we classify the training data.For each misclassified data point, we update the weight such that it has higher weight for the next iteration.This process is repeated for number of iterations defined by user.Finally, we take  the weighted mean of weak classifiers to get the final strong classifier.*</p>
+<p>*<em>Answer: </em>Adaboost : It is  a boosting technique which combines multiple weak classifier into a  final classifier.
+ A weak classifier is simply a classifier which does better than random chance.This is an iterative algorithm where each point in dataset assigned some weight.In each iteration,  using weak classifier we classify the training data.For each misclassified data point, we update the weight such that it has higher weight for the next iteration.This process is repeated for number of iterations defined by user.Finally, we take  the weighted mean of weak classifiers to get the final  classifier.
+ Example : You have a dataset consisting of n samples to classify into two classes. 
+ How Adaboost works ? : 1. choose any algorithm to classify say Decision Tree denote it as D.
+       2.Assign equal weight to each data point say x.
+       3.Now, train your dataset using algorithm D.
+       4.Let say you got classifier h after training.
+       5.Test your classifier on training data, say you got y data points misclassified out of n. Reassign the weight of the misclassified y points such that it has higher weight.
+       6.repeat the process 2 to 4 on the dataset with new weights.Note: Each iteration  produces a new classifier.
+       7.Step 2 to 4 are repeated until you get good metric score(accuray, fscore).let say you repeated for p times so you will get p classifers.
+       8.To classify on test set, we will vote across all p classifier we got repeating  step 2 to 4.</p>
+<p>*</p>
 
 </div>
 </div>
